@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <link rel="icon" href="imagen/cabezado.png" type="">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+    
+    <style>
+        .navegador{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        .navbar .container{
+            margin-top: 5px;
+        }
+
+        .navbar {
+            background-color: #398e96;
+            color: white;
+            padding: 5px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }   
+
+        .nav-link {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-link a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .navbar-brand h2{
+            font-family: "Forte";
+            color: #6e1369;
+            margin-right: 10px;
+        }
+
+        .nav-item{
+            font-size: 20px;
+            text-transform: uppercase;
+            font-family: "Bodoni MT Black";
+        }
+
+        .GALERIA {
+            background: linear-gradient(#64177b4f, #000000c4), 
+            url('../imagen/tejer.jpg');
+            background-size: cover;
+            background-position: center; 
+            width: 100%;
+            height: 580px;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .GALERIA h1{
+            color: #f698fb;
+            font-size: 7rem; 
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: "Forte";
+            text-decoration: underline;
+            text-decoration-color: #22d3ff;
+            text-decoration-thickness: 5px;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .GALERIA p{
+            color: #d1c5dd;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: "Harlow Solid Italic";
+            margin-bottom: 3rem;
+        }
+
+        .btn{
+            background-color: #ffffff; 
+            color: #000000;
+            text-decoration: none;
+            font-size: 1.8rem; 
+            font-weight: bold;
+            font-family: "Bernard MT Condensed";
+            text-transform: uppercase;
+            padding: 15px 50px; 
+            border-radius: 20px; 
+            border: none;
+            box-shadow: 0px 4px 6px #0000001a; 
+            transition: all 0.3s ease; 
+        }
+
+        .btn:hover {
+            background-color: #000000;
+            color: #1bf0ff;
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 10px #00000033; 
+        }
+
+        .titulo_modelo{
+            background-color: #ffebf2;
+        }
+
+        .titulo_modelo h2{
+            font-size: 5rem;
+            text-align: center;
+            color: #7c1a7c;
+            font-family: "Lucida Calligraphy";
+            padding-top: 18px;
+            margin-bottom: 0;
+        }
+
+        /* Container */
+        .container2 {
+            background-color: #edb5d4;
+            text-align: center;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container2 h2{
+            font-size: 50px;
+            font-family: "Copperplate Gothic Bold";
+            color: #824281;
+        }
+
+        .container2 p{
+            font-family: "Arial Rounded MT Bold";
+            color: #5f4464;
+            font-size: 25px;
+        }
+
+        .fotos{
+            display: flex;
+            grid-gap: 15px;
+            max-width: 1800px;
+        }
+
+        .fot-item{
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px #00000033;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .fot-item img{
+            width: 100%;
+            display: flex;
+            transition: transform 0.3s ease;
+            border-color: #000000;
+            border-radius: 10px;
+            border-style: dotted;
+        }
+
+        .fot-item:hover{
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px #0000004d;
+        }
+
+        .fot-item:hover img{
+            transform: scale(1.1);
+        }
+
+        .fot-item p{
+            position: absolute;
+            font-family: "Bodoni MT Black";
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #000000c3;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.1rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .fot-item:hover p{
+            opacity: 1;
+        }
+
+        .collapse ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .collapse ul li {
+            margin: 0 15px;
+        } 
+
+        .collapse ul li a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 15px;
+            transition: background-color 0.3s ease;
+            border-radius: 25px;
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .collapse ul li a:hover {
+            background-color: #004275;
+            color: #62f2ff;
+            text-decoration: none;
+        }
+
+        .cards_titulo{
+            background-color: #f9e2ee;
+        }
+
+        .cards_titulo h2{
+            font-size: 5rem;
+            color: #7c1a7c;
+            font-family: "Lucida Calligraphy";
+            padding-top: 10px;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .cards {
+            padding: 30px;
+            text-align: center;
+            background-color: #903f6a;
+            padding-top: 30px;
+        }
+
+        .card-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card h3{
+            margin-top: 20px;
+            font-family: "Castellar";
+            font-size: 50px;
+            text-transform: uppercase;
+        }
+
+        .card p{
+            font-size: 25px;
+            font-family: "Footlight MT Light";
+        }
+
+        .card img {
+            width: 500px;
+            height: auto;
+            display: flex;
+            transition: transform 0.3s ease;
+            border-color: #000000;
+            border-radius: 10px;
+            border-style: solid;
+        }
+
+        .card img:hover{
+            transform: scale(1.1);
+        }
+
+        .card button{
+            background-color: #ffffff; 
+            color: #000000;
+            font-size: 1.8rem; 
+            font-weight: bold;
+            font-family: "Bernard MT Condensed";
+            text-transform: uppercase;
+            padding: 15px 50px; 
+            border-radius: 20px; 
+            border: none; 
+            box-shadow: 0px 6px 6px #0000001a; 
+            transition: all 0.3s ease; 
+        } 
+
+        .card button:hover{
+            background-color: #000000;
+            color: #1bf0ff;
+            transform: translateY(-2px);
+            box-shadow: 0px 10px 10px #00000033; 
+        }
+
+        .footer{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 20px;
+            padding: 20px;
+            background-color: #193a3d;
+            color: #ffffff;
+        }
+
+        .footer-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .iconos i{
+            color:white;
+        }
+
+        .iconos ul li{
+            font-size: 24px;
+            padding-bottom: 5px;
+            list-style-type: none;
+            transition: transform 0.3s ease;
+        }
+
+        .iconos ul li:hover {
+            transform: scale(1.2);
+            color:#ea00ff;
+        }
+
+        .footer-item p {
+            margin: 5px 0;
+            font-size: 1.1rem;
+            font-family: "Bernard MT Condensed";
+        }
+    </style>
+</head>
+<body>
+    <header class="navegador navbar-expand-lg fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand"><h2> BRIJOS Y DISEÑOS</h2></a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"><i class="fa-solid fa-house-chimney"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#GALERY"><i class="fa-solid fa-image"></i> Galeria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nosotros.html"><i class="fa-solid fa-user"></i> Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="servicios.html"><i class="fa-solid fa-people-arrows"></i> Servicios</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="GALERIA" id="GALERY">
+        <h1>Nuestra galeria</h1>
+        <p>Aqui te mostraremos nuestros mejores modelos de toda la marca de tejido hecho a mano</p>
+        <a href="https://amep.org.pe/empresa/tejidos-peruanos/" target="_blank" class="btn">Buscar más</a>
+    </section>
+
+    <!-- Tradiciones Peruanas Section -->
+    <section class="titulo_modelo" id="CARTA">
+        <h2>Nuestros modelos</h2>
+    </section>
+    <section class="container2">
+        <h2>Nuestra galeria de imagenes:</h2>
+            <p>Te mostraremos la coleccion de algunos modelos que hemos hecho a mano</p>
+            <div class="fotos">
+                <div class="fot-item a">
+                    <img src="../imagen/modelo1.jpeg" alt="Postre 1" height="415px">
+                    <p>Ropa tejida para perro</p>
+                </div>
+                <div class="fot-item b">
+                    <img src="../imagen/modelo2.jpeg" alt="Postre 2" height="415px">
+                    <p>Turbantes</p>
+                </div>
+                <div class="fot-item c">
+                    <img src="../imagen/modelo6.jpg" alt="Postre 3" height="415px">
+                    <p>Blusa para verano</p>
+                </div>
+                <div class="fot-item e">
+                    <img src="../Imagen/modelo5.jpg" alt="Postre 5" height="415px">
+                    <p>Ropa tejida para gatos</p>
+                </div>
+                <div class="fot-item f">
+                    <img src="../imagen/tejido.jpg" alt="Postre 6" height="415px">
+                    <p>Blusa hecho a mano</p>
+                </div>
+            </div>
+    </section>
+    <!-- Nuestros Locales Section -->
+    <section class="cards_titulo">
+        <h2>Nuestros Locales</h2>
+    </section>
+    <section class="cards">
+        <div class="card-grid">
+            <div class="card">
+                <img src="imagen/local1.jpg" alt="Local 1">
+                <h3>Local 1</h3>
+                <p>Aqui econtraras materiales de tejido como
+                <br>lanas y herramientas para tejer.
+                </p>
+                <button>Ver más</button>
+            </div>
+            <div class="card">
+                <img src="imagen/local2.jpg" alt="Local 2">
+                <h3>Local 2</h3>
+                <p>En este sitio podras hacer pedidos de nuestra
+                <br>galeria.
+                </p>
+                <button>Ver más</button>
+            </div>
+            <div class="card">
+                <img src="imagen/local3.jpg" alt="Local 3">
+                <h3>Local 3</h3>
+                <p>En este lugar podras hallar y comprar algunos de
+                <br>nuestros mejores marcas de nuestra tienda. 
+                </p>
+                <button>Ver más</button>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-item">
+            <div class="iconos">
+                <ul>
+                    <li><a href="https://web.whatsapp.com"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="https://www.facebook.com"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-item">
+            <p>Nombre y apellido:</p>
+            <p>Justin Guillermo Diodiño, Ordoñez Torres</p>
+        </div>
+        <div class="footer-item">
+            <p>Teléfono Fijo: (+01) 251 783</p>
+            <p>Teléfono Móvil: 990 079 608</p>
+        </div>
+        <div class="footer-item">
+            <p>IISL, Av. Benavides, Miraflores</p>
+        </div>
+        <div class="footer-item">
+            <p>Carrera: Diseño y desarrollo web - Año: 2024</p>
+        </div>
+        <div class="footer-item">
+            <p>Docente: Roberto Inga Alvarado</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

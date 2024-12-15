@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros</title>
+    <link rel="icon" href="imagen/cabezado.png" type="">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+    
+    <style>
+        .navegador{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        .navbar .container{
+            margin-top: 5px;
+        }
+
+        .navbar {
+            background-color: #398e96;
+            color: white;
+            padding: 5px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }   
+
+        .nav-link {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-link a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .navbar-brand h2{
+            font-family: "Forte";
+            color: #6e1369;
+            margin-right: 100px;
+        }
+
+        .nav-item{
+            font-size: 20px;
+            text-transform: uppercase;
+            font-family: "Bodoni MT Black";
+        }
+
+        .collapse ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .collapse ul li {
+            margin: 0 10px;
+        } 
+
+        .collapse ul li a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 15px;
+            transition: background-color 0.3s ease;
+            border-radius: 25px;
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .collapse ul li a:hover {
+            background-color: #004275;
+            color: #62f2ff;
+            text-decoration: none;
+        }
+
+        .NOSOTROS {
+            position: relative;
+            background: linear-gradient(#64177b4f, #000000c4),
+            url('../imagen/tejer.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 580px;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .NOSOTROS h2 {
+            color: #f698fb;
+            font-size: 7rem; 
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: "Forte";
+            text-decoration: underline;
+            text-decoration-color: #22d3ff;
+            text-decoration-thickness: 5px;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .NOSOTROS p {
+            color: #d1c5dd;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: "Harlow Solid Italic";
+            margin-bottom: 3rem;
+        }
+
+        .NOSOTROS a {
+            background-color: #ffffff; 
+            color: #000000;
+            text-decoration: none;
+            font-size: 1.8rem; 
+            font-weight: bold;
+            font-family: "Bernard MT Condensed";
+            text-transform: uppercase;
+            padding: 15px 50px; 
+            border-radius: 20px; 
+            border: none;
+            box-shadow: 0px 4px 6px #0000001a; 
+            transition: all 0.3s ease;
+        }
+
+        .NOSOTROS a:hover{
+            background-color: #000000;
+            color: #1bf0ff;
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 10px #00000033; 
+        }
+
+        .section {
+            background-color: #f1d8e6;;
+            padding: 40px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+        }
+
+        .section h3 {
+            margin-bottom: 20px;
+            font-size: 70px;
+            font-family: "Copperplate Gothic Bold";
+            color: #824281;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .section p{
+            font-family: "Arial Rounded MT Bold";
+            color: #5f4464;
+            font-size: 25px;
+            margin-bottom: 80px;
+        }
+
+        .section img {
+            max-width: 100%;
+            height: 550px;
+            border-radius: 5px;
+            width: 100%;
+            display: flex;
+            transition: transform 0.3s ease;
+            border-color: #000000;
+            border-radius: 10px;
+            border-style: dotted;
+        }
+
+        .section img:hover{
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px #0000004d;
+        }
+
+        .sec1{
+            margin-right: 10rem;
+        }
+
+        .sec2{
+            margin-right: 5rem;
+        }
+
+        .section a {
+            background-color: #ffffff; 
+            color: #000000;
+            text-decoration: none;
+            font-size: 1.8rem; 
+            font-weight: bold;
+            font-family: "Bernard MT Condensed";
+            text-transform: uppercase;
+            padding: 15px 50px; 
+            border-radius: 20px; 
+            border: none;
+            box-shadow: 0px 4px 6px #0000001a; 
+            transition: all 0.3s ease; 
+        }
+
+        .section a:hover{
+            background-color: #000000;
+            color: #1bf0ff;
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 10px #00000033;
+        }
+
+        .video-section {
+            background-image: url('../imagen/video_fondo2.jpg'); /* Placeholder */
+            background-size: cover;
+            background-position: center;
+            height: 750px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #fff;
+            font-size: 48px;
+        }
+
+        .video-section h3{
+            font-size: 50px;
+            color: white;
+            font-family: "Arial Black";
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .section2 {
+            background-color: #f1d8e6;;
+            padding: 40px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section2 h3 {
+            margin-bottom: 20px;
+            font-size: 70px;
+            font-family: "Copperplate Gothic Bold";
+            color: #824281;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section2 p{
+            font-family: "Arial Rounded MT Bold";
+            color: #5f4464;
+            font-size: 25px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .section2 img {
+            max-width: 100%;
+            height: 450px;
+            border-radius: 5px;
+            width: 100%;
+            display: flex;
+            transition: transform 0.3s ease;
+            border-color: #000000;
+            border-radius: 10px;
+            border-style: dotted;
+        }
+
+        .section2 img:hover{
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px #0000004d;
+        }
+
+        .blog {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .blog .post {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 5px;
+            width: 30%;
+        }
+
+        .blog .post img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .blog h2{
+            margin-top: 15px;
+            font-family: "Castellar";
+            font-size: 50px;
+            text-transform: uppercase;
+        }
+
+        .post a{
+            background-color: #e0d5d5; 
+            color: #000000;
+            font-size: 1.8rem; 
+            text-decoration: none;
+            font-weight: bold;
+            font-family: "Bernard MT Condensed";
+            text-transform: uppercase;
+            padding: 15px 80px; 
+            border-radius: 20px; 
+            border: none; 
+            box-shadow: 0px 6px 6px #0000001a; 
+            transition: all 0.3s ease; 
+        } 
+
+        .post a:hover{
+            background-color: #000000;
+            color: #1bf0ff;
+            transform: translateY(-2px);
+            box-shadow: 0px 10px 10px #00000033; 
+        }
+
+        .footer{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 20px;
+            padding: 20px;
+            background-color: #193a3d;
+            color: #ffffff;
+        }
+
+        .footer-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .iconos i{
+            color:white;
+        }
+
+        .iconos ul li{
+            font-size: 24px;
+            padding-bottom: 5px;
+            list-style-type: none;
+            transition: transform 0.3s ease;
+        }
+
+        .iconos ul li:hover {
+            transform: scale(1.2);
+            color:#ea00ff;
+        }
+
+        .footer-item p {
+            margin: 5px 0;
+            font-size: 1.1rem;
+            font-family: "Bernard MT Condensed";
+        }
+    </style>
+</head>
+<body>
+    <header class="navegador navbar-expand-lg fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand"><h2> BRIJOS Y DISEÑOS</h2></a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"><i class="fa-solid fa-house-chimney"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="galeria.html"><i class="fa-solid fa-image"></i> Galeria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#OUR"><i class="fa-solid fa-user"></i> Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="servicios.html"><i class="fa-solid fa-people-arrows"></i> Servicios</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <div class="NOSOTROS" id="OUR">
+        <h2>Bienvenidos</h2>
+        <p>Nos podras conocer más nuestra creatividad llamativa en nuestra pagina</p>
+        <a href="https://amep.org.pe/empresa/tejidos-peruanos/" target="_blank">Ver Info</a>
+    </div>
+
+    <div class="section">
+        <div class="sec1">
+            <h3>Nosotros</h3>
+            <p>Somos una empresa super creativa, nos dedicamos mucho en mostrar 
+            <br>nuestra experiencia de hacer tejidos hecho a mano.</p>
+            <p>Nuestro labor es ofrecer a la comunidad nuestro mejores modelos,
+            <br>demostrando nuestros dones de tejido.
+            </p>
+            <a href="#OUR">Historia</a>
+        </div>
+        <div class="sec2">
+            <img src="../imagen/nosotros.jpg" alt="Imagen de Nosotros">
+        </div>
+    </div>
+
+    <div class="video-section">
+        <h3>Video de la empresa</h3>
+        <iframe width="1560" height="570" src="https://www.youtube.com/embed/SuQIT7Md_A8?si=MNK2sLtIj-A8mEdt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div class="section2">
+        <h3>Nuestro Blog</h3>
+        <div class="blog">
+            <div class="post">
+                <img src="../imagen/cosejo_tejido.jpg" alt="Blog 1">
+                <h2>Consejos</h2>
+                <p>Podras averiguar tu futuro, ofreciendo algunos consejos que podría ayudarte ya sea el momento que quieras hallar creatividad con la nuestra.</p>
+                <a href="https://www.modista.cl/blogs/blog-modista/los-10-consejos-esenciales-para-principiantes-en-el-tejido?srsltid=AfmBOoqOqGCYpnZ85IJnV-C7peBtJ7cZKk63d9yYdeKJTD8jzrxlYv5q" target="_blank">Ver más</a>
+            </div>
+            <div class="post">
+                <img src="../imagen/post_cast.jpg" alt="Blog 2">
+                <h2>Post Cast</h2>
+                <p>No te pierdas de nuestras ultimas presentaciones de nuestros nuevos proyectos, te dejamos una lista de post cast para no dejarte con la duda.</p>
+                <a href="https://pimpamteje.com/category/podcast/" target="_blank">Ver más</a>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-item">
+            <div class="iconos">
+                <ul>
+                    <li><a href="https://web.whatsapp.com"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="https://www.facebook.com"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-item">
+            <p>Nombre y apellido:</p>
+            <p>Justin Guillermo Diodiño, Ordoñez Torres</p>
+        </div>
+        <div class="footer-item">
+            <p>Teléfono Fijo: (+01) 251 783</p>
+            <p>Teléfono Móvil: 990 079 608</p>
+        </div>
+        <div class="footer-item">
+            <p>IISL, Av. Benavides, Miraflores</p>
+        </div>
+        <div class="footer-item">
+            <p>Carrera: Diseño y desarrollo web - Año: 2024</p>
+        </div>
+        <div class="footer-item">
+            <p>Docente: Roberto Inga Alvarado</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
